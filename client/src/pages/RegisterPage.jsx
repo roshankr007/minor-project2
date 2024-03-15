@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../styles/Register.scss"
+import { useNavigate} from "react-router-dom"
 import background from '../register.jpg'
 
 const RegisterPage = () => {
@@ -18,17 +19,47 @@ const handleChange = (e) => {
         ...formData,                            //spread opearator , this keeps the values of other fields and data entered while entering the new data
         [name]:value,
         [name]:name === "profileImage" ? files[0]: value
-    })
+    });
+};
+
+
+const [passwordMatch , setPassswordMatch] = useState(true)
+
+useEffect(() => {
+    setPassswordMatch(formData.password=== formData.confirmPassword  || formData.confirmPassword === "")
+
+})
+
+const navigate = useNavigate();
+
+const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try{
+        const register_form  = new FormData()
+
+        for (var key in formData ){
+            register_form.append(key, formData[key])
+        }
+
+        const response = await fetch("http://localhost:3001/auth/register",{
+        method: "POST",
+        body: register_form
+        })
+
+        if(response.ok){
+            navigate("/login")
+        }
+    }
+    catch(err){
+        console.log("Registration failed",err.message)
+    }
 }
-
-
-console.log(formData)
-
 
   return (
     <div className= 'register' style={{ backgroundImage: `url(${background})`}}>
         <div className="register_content" >
-            <form className="register_content_form"> 
+            <form className="register_content_form" onSubmit={handleSubmit}> 
                 <input
                     placeholder='First Name'
                     name='firstName'
@@ -72,6 +103,13 @@ console.log(formData)
                     type='password'
                     required
                 />
+                
+
+                {!passwordMatch && (
+                    <p style ={{color:"red"}}> Passwords are not matched</p>
+                )}
+
+
                 <input
                      id="image"
                      type='file'
@@ -79,7 +117,7 @@ console.log(formData)
                      accept='image/*' 
                      style={{display:"none"}} 
                      onChange = {handleChange}
-                     required
+                     
                 />
                 <label htmlFor="image">
                     <img src="/assets/addImage.jpg" alt="add profile photo"/>
@@ -94,14 +132,14 @@ console.log(formData)
                     />
                 )}
 
-                //submit button for the page 
-                <button type="submit">REGISTER</button>             
+                {/* //submit button for the page  */}
+                <button type="submit" disabled={!passwordMatch}>REGISTER</button>             
             </form>
-            <a href='/login'> Already have registered? login here </a>
+            <a href='/login'> Already have registered? Log in here </a>
 
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterPage
+export default RegisterPage;

@@ -15,11 +15,11 @@ const storage  = multer.diskStorage({
     },
     filename:function(req,file,cb) {
         cb(null, file.originalname) //use the original filename
-    }
-})
+    },
+});
 
 
-const upload = multer({storage})
+const upload = multer({storage});
 
 
 /* USER REGISTER*/
@@ -45,12 +45,12 @@ router.post("/register", upload.single('profileImage'), async(req,res) => {
         const existingUser = await User.findOne({email}); //as email is unique property 
 
         if(existingUser){
-            return res.status(409).json({message:"user already exists"})
+            return res.status(409).json({message:"user already exists"});
         }
 
         //hash the password :
-        const salt = await bcrypt.genSalt()
-        const hashedPassword = await bcrypt.hash(password,salt)
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(password,salt);
 
         //create new user 
         const user = new User ({
@@ -59,15 +59,46 @@ router.post("/register", upload.single('profileImage'), async(req,res) => {
             email,
             password:  hashedPassword,
             profileImage,
-            })
+            });
         
         //save the new user ;
         await newUser.save();
 
         //send a successful mesage
-        res.status(200).json({message: "user registered successfully!" , user: newUser})
+        res.status(200).json({message: "user registered successfully!" , user: newUser });
     }catch (err) {
         console.log(err);
-        res.status(500).json({message:"registration failed", error: err.message})
+        res.status(500).json({message:"registration failed", error: err.message});
     }
 });
+
+/* USER LOGIN*/
+router.post("/login", async (req, res) => {
+    try {
+      /* Take the infomation from the form */
+      const { email, password } = req.body
+  
+      /* Check if user exists */
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(409).json({ message: "User doesn't exist!" });
+      }
+  
+      /* Compare the password with the hashed password */
+      const isMatch = await bcrypt.compare(password, user.password)
+      if (!isMatch) {
+        return res.status(400).json({ message: "Invalid Credentials!"})
+      }
+  
+      /* Generate JWT token */
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET)
+      delete user.password
+  
+      res.status(200).json({ token, user })
+  
+    } catch (err) {
+      console.log(err)
+      res.status(500).json({ error: err.message })
+    }
+  })
+module.exports = router
