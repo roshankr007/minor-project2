@@ -1,23 +1,39 @@
-import { createSlice } from "@reduxjs/toolkit"
-
-//now we have initial state in which we store data accessible to entire application 
-//so we can grab it anywhere we want 
+import { createSlice} from "@reduxjs/toolkit"
 
 const initialState = {
-    user: null,
-    token : null
+  user: null,
+  token: null
 }
 
 export const userSlice = createSlice({
-    name :"user",                        //reducers are simply functions that modify the state to a new state through a specific action 
-    initialState,
-    reducers: {
-        setLogin: (state, action) =>{
-            state.user = action.payload.user
-            state.token = action.payload.token
-        }
+  name: "user",
+  initialState,
+  reducers: {
+    setLogin: (state, action) => {
+      state.user = action.payload.user
+      state.token = action.payload.token
+    },
+    setLogout: (state) => {
+      state.user = null
+      state.token = null
+    },
+    setListings: (state, action) => {
+      state.listings = action.payload.listings
+    },
+    setTripList: (state, action) => {
+      state.user.tripList = action.payload
+    },
+    setWishList: (state, action) => {
+      state.user.wishList = action.payload
+    },
+    setPropertyList: (state, action) => {
+      state.user.propertyList = action.payload
+    },
+    setReservationList: (state, action) => {
+      state.user.reservationList = action.payload
     }
+  }
 })
 
-export const { setLogin } = userSlice.actions
+export const { setLogin, setLogout, setListings, setTripList, setWishList, setPropertyList, setReservationList } = userSlice.actions
 export default userSlice.reducer

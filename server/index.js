@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
 
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./routes/auth.js");
 
 app.use(cors());
 app.use(express.json());

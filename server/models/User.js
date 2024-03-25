@@ -23,24 +23,43 @@ const UserSchema = new mongoose.Schema(
             type: String,
             default: "",
         },
-        wishlist: {
-            type:Array,
-            default: [],
-        },
-        yourItems: {
+        // wishlist: {
+        //     type:Array,
+        //     default: [],
+        // },
+        // yourItems: {
+        //     type: Array,
+        //     default: [],
+        // },
+        // leasedItems: {
+        //     type:Array,
+        //     default: [],
+        // },
+        // purchasedItems: {
+        //     type:Array,
+        //     default: [],
+        // }
+
+
+        tripList: {
             type: Array,
             default: [],
-        },
-        leasedItems: {
-            type:Array,
+          },
+          wishList: {
+            type: Array,
             default: [],
-        },
-        purchasedItems: {
-            type:Array,
+          },
+          propertyList: {
+            type: Array,
             default: [],
-        }
+          },
+          reservationList: {
+            type: Array,
+            default: [],
+          }
+
     },
-    { timestamps: true}
+    {timestamps: true}
 )
 
 const User = mongoose.model("User",UserSchema)
