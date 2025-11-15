@@ -1,0 +1,72 @@
+1. Variables in js 
+prefer not to use var because of issue in block scope and functional scope 
+VAR has function scope   
+variables declared without any declarations become global only in non-strict mode.So, 
+if we have a variable inside a function , declared without any declaration, and you are not
+using strict mode , then it will become global.
+If you do not initialise any variable, it holds undefined.
+
+"use strict"   // defines to treat all js code as newer js 
+automatically everything these days run on strict mode .
+without writing anything also, we can declare a variable.
+const can't be changed
+
+2. Data Types
+   primitives - 
+     number => 2^53
+     bigint => 
+     string =>""
+     boolean => true/false
+     null => this is a standalone value in js
+     undefined => no value given yet.
+     symbol => used for uniqueness
+to check typeof any varible - console.log(typeof "what's the type");
+
+3.Data-types conversion
+     we can convert into types into another by wrapping them and passing into another dt's 
+     calss name 
+     eg - let num = "3";
+          let new_num = Number(num);
+          console.log(typeof new_num) ; -> this will print number as it is now a number
+          but what if we do - 
+          let num ="3acsa"
+          let anotherNum = Number(num);
+          console.log(typeof anotherNum) -> this will print Number!!
+          but when we do - 
+               console.log(anotherNum) ; -> output of this will be Nan.!!
+Note :- when typecasting / getting value from a response, always validate the type of it by printing it.
+
+          2. let num = null;
+               console.log(typeof Number(num)); -> 0;
+              let num2 = undefined;
+              console.log(typeof Number(num2)); -> undefined.
+
+* core logic - so the thing is that Nan is still of type Number in js , and we do not get errors
+becasue js is very loosely typed, and very permissive.
+we can pass a variable in a function to check if it is nan or not = if(isNaN(anotherNum)){...}
+
+// value true when converted to number will be 1.
+
+now , converting int => boolean
+1. true is converted to 1 and false into 0 or vice versa 
+2. any integer value that is not 0 will be converted to true and only 0 is converted to false.
+
+converting string => boolean
+here, the conversion depends on the length of the string.
+1. "" -> false 
+2. any other string with len>0 -> true.
+
+null => boolean -> gives false.
+undefined => boolean -> gives false.
+NaN => boolean -> gives false.
+
+number, undefined , NaN, null, => string
+
+object => string 
+     eg - let obj = {a:2,}
+          let c = String(obj);
+          console.log(c); -> [object object]
+          console.log(typeof c);string 
+
+          //-> it call's the object's .toString() method, For plain objects (like yours), this method is inherited from Object.prototype.toString, which returns:
+               "[object Object]". This can be done with .stringify() function.

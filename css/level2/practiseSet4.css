@@ -1,0 +1,44 @@
+*{
+     margin: 0;
+     padding: 0;
+     color:white;
+     
+}
+#navbar{
+     background-color: #0f1111;
+     height:60px;
+     width: 100%;
+}
+#logo{
+     color:#f08804;
+}
+#search_button{
+     background-color:#f08804;
+
+}
+a{
+     margin-right : 170px;
+}
+#div1{
+     height: 100px;
+     width: 100px;
+     background-color: red
+}
+
+
+#div2{
+     height: 100px;
+     width: 100px;
+     background-color: blueviolet
+}
+
+#div3{
+     height: 100px;
+     width: 100px;
+     background-color: magenta;
+}
+#toTopButton{
+     display:block;
+     border-radius: 5px;
+     background-color: #0f1111;
+}

@@ -1,0 +1,81 @@
+// user input 
+/* 1) easy way - window prompt 
+    2)by creating html text box */
+
+// let username ;
+// // username = window.prompt(`what's your username ?`);
+// // console.log(username);
+// document.getElementById("submit").onclick = func();
+
+// function func(){
+//     username  = document.getElementById("text").value;
+//     document.getElementById("header").textContent = `Welcome ${username}`
+// }
+
+//type conversions 
+// let z  ;
+// z=Boolean(z);
+// console.log(z);
+
+// let x ="";
+// x=Number(x);
+// console.log(x); 
+
+// using const variable 
+        // const PI = 3.14159;
+        // let radius, circum;
+        // document.getElementById("submit").onclick = function (){
+        //     radius = document.getElementById("text").value;
+        //     radius = Number(radius);
+        //     circum = 2* PI*radius;
+        //     document.getElementById("circum").textContent = `circumference is ${circum}`
+        // }
+
+
+
+// random number generator 
+    // Math.random()-> generates a random number between 0 and 1
+    // Math.floor() -> rounds down to the nearest whole number
+    // let rand = Math.floor(Math.random()*100)+1;
+    // console.log(rand);
+
+//  ternary operator - a shortcut to if and else statement 
+
+let age =19;
+let message =(age>=18)? `you are greater than 18`: `you are less than 18`;
+console.log(message);
+
+let isStudent = true
+let message2 = isStudent ? "you are a student ": "you are not a student";
+console.log(message2);
+
+SWITCH statement
+
+first example
+
+let x=2;
+switch(x){
+    case 1 :
+        console.log("x is 1");
+        break;
+    case 2:
+        console.log("x is 2");
+        break;
+    default:
+        console.log("no input");
+}
+second example
+
+let score=89;
+let grade ;
+
+switch(true){
+    case score >=90:
+        grade="A"
+        break;
+    case score >=80:
+        grade="B"
+        break;
+
+        and so on 
+}

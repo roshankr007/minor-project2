@@ -1,0 +1,27 @@
+install ejs from npm 
+setup ejs as a view engine for this project  -> app.set('view-engine', 'ejs');
+write basic route handlers and sever code
+for ejs -> create a folder exactly with the name of 'views' 
+     and inside it create a  file index.ejs 
+from index.js server file when you send any response at a route , now you can render an ejs file at that route with
+res.render('filename') line of code. 
+NOTE - filename should be a valid filename inside views else is will throw error at that particular route as -
+"no lookup found at views".
+
+dynamic routing 
+so we sometimes see there are some routes where only a part of route is changing and rest is fixed
+ex-
+/admin/roshan
+/admin/rohit
+/admin/dad
+
+so if this route is for admin priveleges of a companya and suppose 100 people have this privelage 
+then will we create a 100 different routes for this , no! we will then use dynamic routing 
+
+syntax for creating a dynamic route - 
+app.get('/author/:name', (req, res, next)=>{
+     res.send('author is '+req.params.name);
+     next();
+})
+this will create a dynamic route where : represent params of url and whatever part of a route is changing 
+simply add : before that in route handler and it will give you a dynamic route.

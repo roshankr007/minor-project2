@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="form">
+            <h1>Random password generator</h1>
+            <input type="number" id="passLength"  placeholder="length">
+                <label for="passLength">Enter the length you want to generate </label><br>
+
+            <input type="checkbox" id="incLC" >
+                <label for="incLC">include lower case </label><br>
+
+            <input type="checkbox" id="incUC">
+                <label for="incUC">include upper case </label><br>
+
+            <input type="checkbox" id="incNum">
+                <label for="incNum">include numbers</label><br>
+
+            <input type="checkbox" id="incSpec">
+                <label for="incSpec">include special characters </label><br>
+
+            <button id="generate" >Generate</button>
+            <p id="pass"></p>
+            <button id="copy">Copy</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

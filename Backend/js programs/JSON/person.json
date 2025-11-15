@@ -1,0 +1,6 @@
+{
+    "name":  "roshan",
+    "age":12,
+    "isEmp" :true,
+    "hobbies"  :["reading","writing","skiing"]
+}

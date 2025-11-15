@@ -1,0 +1,36 @@
+body{
+    color:white;
+     background-color: #212121;
+}
+.head{
+    color:white;
+    font-size: 39px;
+}
+.container p {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    color: rgb(248, 248, 248);
+}
+.container h1 {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    color: rgb(182, 52, 121);
+}
+.menu_container ul {
+    display: flex;
+     list-style-type: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.menu_container ul li a{
+    display: block;
+    color: #2c98bb;
+    margin:5px 10px;
+
+}

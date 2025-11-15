@@ -1,0 +1,111 @@
+# Backend Developer Roadmap
+
+Networking 
+
+HTTP
+
+TCP
+
+TCP Vs UDP
+
+Client Server Model
+
+Caching 
+
+Databases - SQL
+
+Maven, Gradle
+
+Tomcat SQL Postman
+
+JSP and Servlets
+
+JSP-Frontend
+
+Servlets-Backend
+
+JSP: Jakarta Server Pages, JSP Archiecture
+
+MVC Architecture 
+
+JDBC: Java Database Connectivity
+
+JDBC: Java Database Connectivity
+
+Spring
+
+Spring Core- Dependancy Injection
+
+Inversion of Control
+
+Beans and Bean Scope
+
+Spring Configurations: XML, Annotations, Java Code
+
+Spring MVC-Request Params
+
+Request Mappings
+
+Path Variable 
+
+Spring Rest- JSON Data Binding 
+
+Spring Rest Controller
+
+Retreive Pojos
+
+Using Path Variables For Rest Endpoints
+
+Exception Handling
+
+Hibernate- CURD Operations
+
+Eager vs Lazy Loading
+
+Hibernate Mappings
+
+Spring Data Rest- Configurations
+
+Paginations
+
+Sorting
+
+Spring AOP- BeforeAdvice Type
+
+Pointcut Expressions
+
+Pointcut Declerations
+
+Ordering Aspects
+
+Join Points 
+
+Advice Types
+
+Spring Security
+
+Authentications and Authorizations
+
+OAUTH 2.0
+
+JWT Token
+
+CORS
+
+CSRF
+
+User Roles
+
+Junit
+
+Mockito
+
+Spring Boot (Makes Development Process Faster)
+
+Spring Boot Dev Tools
+
+Spring Boot Actuator
+
+Redis with spring boot
+
+Kafka with spring boot

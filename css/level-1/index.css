@@ -1,0 +1,29 @@
+h1{
+     color:rgb(38, 130, 126);
+}
+p  {
+     color:rgb(147, 27, 27)
+}
+/* button{
+     color:rgba(0, 3, 5, 0.452);
+     background-color:rgb(36, 142, 142);
+} */
+/* setting backkkground color */
+body{
+     background-color: rgb(17, 16, 16);
+}
+#box{
+    background-color: rgb(57, 168, 145); 
+    text-decoration:solid;
+    color:rgb(255, 255, 255)
+}
+/* .heading{
+     color:red;
+} */
+/* or we can use commas for multiple elements styling- */
+h1,h2,h3{
+     color:rgb(241, 76, 25);
+}   
+#btn2{
+     background-color: green;
+}      

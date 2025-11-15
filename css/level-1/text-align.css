@@ -1,0 +1,28 @@
+p{
+     text-align:start;
+     color:cadetblue;
+}
+/* h1{
+     text-align:center;
+     color:hotpink;
+     text-decoration:red double underline;
+     text-decoration-color:rgb(215, 84, 156);
+} */
+ #h1{
+     font-weight: 101;
+ }
+ #h2{
+     font-weight: 900;
+ }
+ #h3{
+     font-weight: 700;
+ }
+.link {
+     color:rgb(181, 55, 55)
+}
+a{
+     text-decoration: none;;
+}
+#para1{
+     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

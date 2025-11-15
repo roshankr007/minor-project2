@@ -1,0 +1,40 @@
+*{
+     background-color: rgb(58, 57, 57);
+}
+div{
+     background-color: hotpink;
+     height: 98px;
+     width: 8cm;
+}
+h1{
+     background-color: goldenrod;
+     height: 50px;
+     width:200px;
+     text-align: center;
+}
+#div1{
+     background-color: rgb(22, 152, 166);
+     height:100px;
+     width:100px;
+     border-radius: 50%;
+}
+#div2{
+     background-color: #0f1111;
+     height: 30px;
+     width:100%;
+     border:9px white solid;
+}
+#amazon{
+     font-weight:25px;
+     width:72px;
+     background-color: #0f1111;
+     color:orange;
+     margin-top:3px;
+     margin-bottom:3px;
+}
+#account{
+     background-color: black;
+     color:white;
+     text-transform: none;
+     
+}

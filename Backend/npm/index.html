@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">              
+    <!-- . To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your <head>. -->
+    <title>Document</title>
+    <link rel ="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <style>
+        [class*="col"]      /*class name is set same as div name col */
+        {
+            padding: 2rem;
+            background-color:rgb(62, 204, 204);
+            border: 5px solid #d68e8e;  
+             color : #42bd4e;        /*color sets the text color here */
+                     
+        }
+    </style>
+</head>
+<body>    
+    <div class ="container-md" >Content</div>
+    <div class="row">
+        <div class="col-lg-7">col 1</div>
+        <div class="col-lg-4">col 2</div>
+        <div class="col-sm-1">col 2</div>
+    </div> 
+    <!-- to make the container resposive we use , container-md -->
+    <!-- <h1>hello npm world</h1> -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
